@@ -61,3 +61,11 @@ body {
   color: white;
   font-size: 2.5rem;
 }
+
+header {
+  text-align: center;
+  font-size: 2rem;
+  color: white;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.75);
+}

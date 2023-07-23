@@ -1,4 +1,4 @@
-import React, { useReducer } from "react";
+import React, { useEffect, useReducer } from "react";
 import "./styles.css";
 
 const initialState = {
@@ -91,6 +91,10 @@ function App() {
     initialState
   );
 
+  useEffect(() => {
+    document.title = "React Math Wizard";
+  }, []);
+
   const handleButtonClick = (type, payload) => {
     dispatch({ type, payload });
   };
@@ -117,7 +121,11 @@ function App() {
   ];
 
   return (
-    <div className="calculator-grid">
+    <div>
+      <header>
+      <h1>React Math Wizard</h1>
+      </header>
+      <div className="calculator-grid">
       <div className="output">
         <div className="previous-operand">{previousOperand} {operation}</div>
         <div className="current-operand">{currentOperand}</div>
@@ -138,6 +146,7 @@ function App() {
           {button.label}
         </button>
       ))}
+    </div>
     </div>
   );
 }
